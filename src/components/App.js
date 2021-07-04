@@ -1,14 +1,15 @@
 import { Switch, Route } from 'react-router-dom';
 import Home from '../containers/Home';
-import Item from '../containers/Item';
 
 const App = () => (
-  <main>
-    <Switch>
-      <Route path="/" component={Home} exact />
-      <Route path="/game/:gameId" component={Item} />
-    </Switch>
-  </main>
+  <div className="app">
+    <main>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/game/:gameId" component={Home} />
+      </Switch>
+    </main>
+  </div>
 );
 
 export default App;

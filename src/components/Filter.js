@@ -1,17 +1,8 @@
-import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import API from '../api';
+import useGenres from '../hooks/Genres';
 
 const Filter = ({ fetchGamesByGenre }) => {
-  const [genres, setGenres] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      const data = await API.getAllGenres();
-      const genres = data.results.filter((g) => g.name !== 'RPG');
-      setGenres(genres);
-    })();
-  }, []);
+  const genres = useGenres();
 
   const handleChange = (event) => {
     fetchGamesByGenre(event.target.value);

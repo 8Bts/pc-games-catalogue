@@ -1,0 +1,21 @@
+.li {
+  background-color: #f0feff;
+}
+
+.left {
+  height: 217px;
+}
+
+.right {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.img {
+  display: inline-block;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.2rem;
+  width: 100%;
+  height: 100%;
+}

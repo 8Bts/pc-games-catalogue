@@ -2,15 +2,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import GameItem from '../components/GameItem';
-import fetchGameData from '../redux/actions/index';
+import { fetchGamesData } from '../redux/actions/index';
 
 const GameList = ({
-  gameItems, fetchGameData,
+  gameItems, fetchGamesData,
 }) => {
-  useEffect(() => fetchGameData(), []);
+  useEffect(() => fetchGamesData(), []);
 
   return (
-    <ul>
+    <ul className="list-group w-75">
       {gameItems.map((item) => (
         <GameItem
           key={item.id}
@@ -18,6 +18,8 @@ const GameList = ({
           name={item.name}
           relDate={item.relDate}
           genres={item.genres}
+          img={item.img}
+          rating={item.rating}
         />
       ))}
     </ul>
@@ -30,25 +32,28 @@ GameList.propTypes = {
     name: PropTypes.string,
     relDate: PropTypes.string,
     genres: PropTypes.arrayOf(PropTypes.object),
+    rating: PropTypes.string,
   })).isRequired,
-  fetchGameData: PropTypes.func.isRequired,
+  fetchGamesData: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => {
-  if (state.results === undefined) {
+  if (state.game.results === undefined) {
     return { gameItems: [] };
   }
-  const gameItems = state.results.map((item) => ({
+  const gameItems = state.game.results.map((item) => ({
     id: item.id,
     name: item.name,
     relDate: item.released,
     genres: item.genres,
+    img: item.background_image,
+    rating: item.rating,
   }));
   return { gameItems };
 };
 
 const mapDispatchToProps = {
-  fetchGameData,
+  fetchGamesData,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameList);
