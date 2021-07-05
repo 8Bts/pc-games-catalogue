@@ -5,7 +5,17 @@ export const fetchGamesData = () => ({
   payload: API.getAllGames(),
 });
 
-export const fetchGamesByGenre = (genre) => ({
+export const fetchGamesByGenre = (genre, page) => ({
   type: 'FETCH_GAMES_BY_GENRE',
-  payload: API.getGamesByGenre(genre),
+  payload: API.getGamesByGenre(genre, page),
+});
+
+export const setGenre = (genre) => ({
+  type: 'SET_GENRE',
+  genre,
+});
+
+export const setPage = (page) => ({
+  type: 'SET_CURRENT_PAGE',
+  page,
 });

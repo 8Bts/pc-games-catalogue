@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import GameItem from '../components/GameItem';
 import { fetchGamesData } from '../redux/actions/index';
+import gamelist from '../styles/gamelist.module.css';
 
 const GameList = ({
   gameItems, fetchGamesData,
@@ -10,7 +11,7 @@ const GameList = ({
   useEffect(() => fetchGamesData(), []);
 
   return (
-    <ul className="list-group w-75">
+    <ul className={`list-group ${gamelist.ul}`}>
       {gameItems.map((item) => (
         <GameItem
           key={item.id}
@@ -32,7 +33,7 @@ GameList.propTypes = {
     name: PropTypes.string,
     relDate: PropTypes.string,
     genres: PropTypes.arrayOf(PropTypes.object),
-    rating: PropTypes.string,
+    rating: PropTypes.number,
   })).isRequired,
   fetchGamesData: PropTypes.func.isRequired,
 };
