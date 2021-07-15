@@ -16,6 +16,11 @@
   margin-bottom: 1em;
 }
 
+.anchor {
+  text-decoration: none;
+  color: inherit;
+}
+
 .img {
   display: inline-block;
   background-position: center;

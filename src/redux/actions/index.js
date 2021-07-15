@@ -1,5 +1,10 @@
 import API from '../../api';
 
+export const fetchSingleGameData = (id) => ({
+  type: 'FETCH_SINGLE_GAME_DATA',
+  payload: API.getSingleGameData(id),
+});
+
 export const fetchGamesData = () => ({
   type: 'FETCH_GAMES_DATA',
   payload: API.getAllGames(),
