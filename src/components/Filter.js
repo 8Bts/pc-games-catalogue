@@ -15,8 +15,8 @@ const Filter = ({
   };
 
   return (
-    <div className="filter d-md-none">
-      <select onChange={handleChange} defaultValue="All">
+    <div className="filter d-md-none mb-3">
+      <select className="form-select" onChange={handleChange} defaultValue="All">
         <option value="All">All</option>
         {genres.map((g) => (<option key={g.id} value={g.name}>{g.name}</option>))}
       </select>

@@ -7,6 +7,7 @@ import PageNav from '../components/PageNav';
 import {
   fetchGamesByGenre, setGenre, setPage,
 } from '../redux/actions';
+import navbar from '../styles/navbar.module.css';
 
 const Home = ({
   fetchGamesByGenre,
@@ -16,19 +17,24 @@ const Home = ({
   totalPages,
 }) => (
   <div>
-    <Filter
-      fetchGamesByGenre={fetchGamesByGenre}
-      setGenre={setGenre}
-      setPage={setPage}
-    />
-    <PageNav
-      fetchGamesByGenre={fetchGamesByGenre}
-      genre={genre}
-      page={page}
-      setPage={setPage}
-      totalPages={totalPages}
-    />
-    <div className="d-flex">
+    <nav>
+      <Filter
+        fetchGamesByGenre={fetchGamesByGenre}
+        setGenre={setGenre}
+        setPage={setPage}
+      />
+      <div className={`d-none d-md-block ${navbar.navbar}`}>
+        <PageNav
+          fetchGamesByGenre={fetchGamesByGenre}
+          genre={genre}
+          page={page}
+          setPage={setPage}
+          totalPages={totalPages}
+          showGenre
+        />
+      </div>
+    </nav>
+    <div className="d-flex justify-content-between">
       <GenreList
         fetchGamesByGenre={fetchGamesByGenre}
         setGenre={setGenre}

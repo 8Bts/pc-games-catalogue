@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import pagenav from '../styles/pagenav.module.css';
 
 const PageNav = ({
   fetchGamesByGenre,
@@ -7,6 +8,7 @@ const PageNav = ({
   page,
   setPage,
   totalPages,
+  showGenre,
 }) => {
   const initialPageBtns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const [pageBtns, setPageBtns] = useState(initialPageBtns);
@@ -51,31 +53,29 @@ const PageNav = ({
   };
 
   return (
-    <div>
-      <span>
-        Genre:
-        {genre}
-        <br />
-        Page:
-        {page}
-        of
-        {totalPages}
-      </span>
-      <br />
-      {
-        pageBtns.map((p) => (
-          <button
-            key={Math.random() * 100}
-            onClick={handlePageBtnClick}
-            type="button"
-            className={`btn mx-1 ${p === page ? 'btn-dark' : 'btn-light'}`}
-          >
-            {p}
-          </button>
-        ))
-      }
-      <button onClick={handlePrevClick} type="button" className="btn bg-light m-3" disabled={!(page > 1)}>Previous</button>
-      <button onClick={handleNextClick} type="button" className="btn bg-light">Next</button>
+    <div className={`d-flex justify-content-${showGenre ? 'between' : 'end'} align-items-center`}>
+      {showGenre ? (<h2 className="d-none d-md-block mx-5">{`Genre: ${genre}`}</h2>) : ''}
+      <div className={pagenav.container}>
+        <div>
+          <span>{` Page: ${page} of ${totalPages}`}</span>
+        </div>
+        <div>
+          {
+            pageBtns.map((p) => (
+              <button
+                key={Math.random() * 100}
+                onClick={handlePageBtnClick}
+                type="button"
+                className={`d-none d-md-inline-block btn mx-1 ${p === page ? 'btn-dark' : 'btn-success'}`}
+              >
+                {p}
+              </button>
+            ))
+          }
+          <button onClick={handlePrevClick} type="button" className="btn bg-success m-3" disabled={!(page > 1)}>Previous</button>
+          <button onClick={handleNextClick} type="button" className="btn bg-success">Next</button>
+        </div>
+      </div>
     </div>
   );
 };
@@ -86,6 +86,11 @@ PageNav.propTypes = {
   page: PropTypes.number.isRequired,
   setPage: PropTypes.func.isRequired,
   totalPages: PropTypes.number.isRequired,
+  showGenre: PropTypes.bool,
+};
+
+PageNav.defaultProps = {
+  showGenre: false,
 };
 
 export default PageNav;
