@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { fetchSingleGameData } from '../redux/actions';
+import singlegame from '../styles/singlegame.module.css';
 
 const propTypes = {
   game: PropTypes.shape({
     name: PropTypes.string,
-    genres: PropTypes.arrayOf(PropTypes.string),
+    genres: PropTypes.arrayOf(PropTypes.object),
     description: PropTypes.string,
     released: PropTypes.string,
     img: PropTypes.string,
@@ -16,7 +17,7 @@ const propTypes = {
   }),
   match: PropTypes.shape({
     params: PropTypes.shape({
-      gameId: PropTypes.number.isRequired,
+      gameId: PropTypes.string.isRequired,
     }),
   }).isRequired,
   fetchSingleGameData: PropTypes.func.isRequired,
@@ -44,16 +45,55 @@ const GamePage = ({
     fetchSingleGameData(match.params.gameId);
   }, []);
 
+  const background = {
+    backgroundImage: `url(${game.img})`,
+  };
+  const requirements = game.platforms.length > 0 ? game.platforms.find((obj) => obj.platform.name === 'PC').requirements : { minumum: null, recommended: null };
   return (
     <div>
-      <div>{game.name}</div>
-      <div>{game.genres}</div>
-      <div>{game.description}</div>
-      <div>{game.released}</div>
-      <div>{game.img}</div>
-      <div>{game.website}</div>
-      <div>{game.rating}</div>
-      <div>{game.platforms ? game.platforms.map((p) => p.name) : []}</div>
+      <div className={singlegame.page}>
+        <header>
+          <div className="header">
+            <h1 className={`${singlegame.h1} text-center p-2`}>{game.name}</h1>
+          </div>
+        </header>
+        <section>
+          <div className="row gx-0 my-4">
+            <div className={`${singlegame.img} col-md-5`} style={background} />
+            <div className={`${singlegame.right} col-md-7 d-flex flex-column`}>
+              <span className="mb-1 d-flex">
+                <span>Genres:</span>
+                <span className="d-flex flex-wrap align-items-center">
+                  { game.genres.map((genre) => (<span className="badge bg-info m-2 mt-1" key={genre.id}>{genre.name}</span>))}
+                </span>
+              </span>
+              <span className="mb-1">
+                Rating:
+                <span className="badge bg-warning mx-2">
+                  {game.rating}
+                  {' / 5'}
+                </span>
+              </span>
+              <span className="my-3">
+                Released:
+                <i>
+                  {` ${game.released}`}
+                </i>
+              </span>
+              <address>
+                Website:
+                <a target="_blank" rel="noreferrer" href={game.website} className="link-success ps-2">{game.website}</a>
+              </address>
+              <span className={singlegame.verdana}>{requirements.minimum}</span>
+              <span className={singlegame.verdana}>{requirements.recommended}</span>
+            </div>
+          </div>
+          <div>
+            <h2 className={`${singlegame.h2} text-center mb-3 p-1`}>Description</h2>
+            <div className={singlegame.verdana}>{game.description}</div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };
@@ -65,14 +105,16 @@ const mapStateToProps = (state) => {
   if (!state.singleGame.name) return {};
 
   return {
-    name: state.singleGame.name,
-    genres: state.singleGame.genres.map((g) => g.name),
-    description: state.singleGame.description_raw,
-    released: state.singleGame.released,
-    img: state.singleGame.background_image,
-    website: state.singleGame.website,
-    rating: state.singleGame.rating,
-    platforms: state.singleGame.platforms,
+    game: {
+      name: state.singleGame.name,
+      genres: state.singleGame.genres,
+      description: state.singleGame.description_raw,
+      released: state.singleGame.released,
+      img: state.singleGame.background_image,
+      website: state.singleGame.website,
+      rating: state.singleGame.rating,
+      platforms: state.singleGame.platforms,
+    },
   };
 };
 
