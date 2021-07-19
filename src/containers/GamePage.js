@@ -62,25 +62,25 @@ const GamePage = ({
             <div className={`${singlegame.img} col-md-5`} style={background} />
             <div className={`${singlegame.right} col-md-7 d-flex flex-column`}>
               <span className="mb-1 d-flex">
-                <span>Genres:</span>
+                <span className="fw-bold">Genres:</span>
                 <span className="d-flex flex-wrap align-items-center">
                   { game.genres.map((genre) => (<span className="badge bg-info m-2 mt-1" key={genre.id}>{genre.name}</span>))}
                 </span>
               </span>
-              <span className="mb-1">
+              <span className="mb-1 fw-bold">
                 Rating:
                 <span className="badge bg-warning mx-2">
                   {game.rating}
                   {' / 5'}
                 </span>
               </span>
-              <span className="my-3">
+              <span className="my-3 fw-bold">
                 Released:
-                <i>
+                <i className="ps-2 fw-normal">
                   {` ${game.released}`}
                 </i>
               </span>
-              <address>
+              <address className="fw-bold">
                 Website:
                 <a target="_blank" rel="noreferrer" href={game.website} className="link-success ps-2">{game.website}</a>
               </address>
