@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <GameItem
+    genres={
+      Array [
+        Object {
+          "id": 1,
+          "name": "action",
+        },
+        Object {
+          "id": 2,
+          "name": "indie",
+        },
+      ]
+    }
+    id={1}
+    img=""
+    name="Grand Theft Auto V"
+    rating={4}
+    relDate="01/01/11"
+  >
+    <li
+      className="list-group-item li"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="left col-md-4"
+        >
+          <a
+            className="anchor"
+            href="/game/1"
+          >
+            <span
+              className="img"
+              style={
+                Object {
+                  "backgroundImage": "url()",
+                }
+              }
+            />
+          </a>
+        </div>
+        <div
+          className="right col-md-8"
+        >
+          <h3>
+            <a
+              className="anchor"
+              href="/game/1"
+            >
+              Grand Theft Auto V
+            </a>
+          </h3>
+          <div
+            className="mb-3"
+          >
+            <span
+              className="badge bg-info me-2"
+              key="1"
+            >
+              action
+            </span>
+            <span
+              className="badge bg-info me-2"
+              key="2"
+            >
+              indie
+            </span>
+            <span
+              className="badge bg-warning"
+            >
+              4
+               / 5
+            </span>
+          </div>
+          <span>
+            Released:
+              01/01/11
+          </span>
+        </div>
+      </div>
+    </li>
+  </GameItem>
+</Provider>
+`;

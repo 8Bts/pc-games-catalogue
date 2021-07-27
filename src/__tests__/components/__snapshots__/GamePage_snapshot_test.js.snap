@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(GamePage)
+    match={
+      Object {
+        "params": Object {
+          "gameId": "3498",
+        },
+      }
+    }
+  >
+    <GamePage
+      fetchSingleGameData={[Function]}
+      game={
+        Object {
+          "description": "",
+          "genres": Array [],
+          "img": "",
+          "name": "",
+          "platforms": Array [],
+          "rating": -1,
+          "released": "",
+          "website": "",
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "gameId": "3498",
+          },
+        }
+      }
+    >
+      <div>
+        <div
+          className="page"
+        >
+          <header>
+            <div
+              className="header"
+            >
+              <h1
+                className="h1 text-center p-2"
+              />
+            </div>
+          </header>
+          <section>
+            <div
+              className="row gx-0 my-4"
+            >
+              <div
+                className="img col-md-5"
+                style={
+                  Object {
+                    "backgroundImage": "url()",
+                  }
+                }
+              />
+              <div
+                className="right col-md-7 d-flex flex-column"
+              >
+                <span
+                  className="mb-1 d-flex"
+                >
+                  <span
+                    className="fw-bold"
+                  >
+                    Genres:
+                  </span>
+                  <span
+                    className="d-flex flex-wrap align-items-center"
+                  />
+                </span>
+                <span
+                  className="mb-1 fw-bold"
+                >
+                  Rating:
+                  <span
+                    className="badge bg-warning mx-2"
+                  >
+                    -1
+                     / 5
+                  </span>
+                </span>
+                <span
+                  className="my-3 fw-bold"
+                >
+                  Released:
+                  <i
+                    className="ps-2 fw-normal"
+                  >
+                     
+                  </i>
+                </span>
+                <address
+                  className="fw-bold"
+                >
+                  Website:
+                  <a
+                    className="link-success ps-2"
+                    href=""
+                    rel="noreferrer"
+                    target="_blank"
+                  />
+                </address>
+                <span
+                  className="verdana"
+                />
+                <span
+                  className="verdana"
+                />
+              </div>
+            </div>
+            <div>
+              <h2
+                className="h2 text-center mb-3 p-1"
+              >
+                Description
+              </h2>
+              <div
+                className="verdana"
+              />
+            </div>
+          </section>
+        </div>
+      </div>
+    </GamePage>
+  </Connect(GamePage)>
+</Provider>
+`;
