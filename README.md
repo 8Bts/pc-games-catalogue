@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# PC Games Catalogue
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  PC Games is a web application listing games in different genres with their details about the system requirements, rating, description, etc. 
+  You can filter games by genre and load the next pages for each genre.
 
-## Available Scripts
+ The application is responsive and it renders properly on small screen devices as well
 
-In the project directory, you can run:
 
-### `npm start`
+## Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- HTML,
+- CSS,
+- ES6,
+- React.js
+- Redux
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Live Demo
 
-### `npm test`
+[Heroku](https://pc-games-cat.herokuapp.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup
 
-### `npm run build`
+  If you want to try this application locally, follow the steps below:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  1. Clone the project using `git clone https://github.com/8Bts/pc-games-catalogue` command.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  2. run `cd pc-games-catalogue`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  3. run `npm install`.
 
-### `npm run eject`
+  4. run `npm start`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Test
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  To run tests for the application try the `npm test` command and ensure that you are in the project folder before running it. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Author
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+👤 **Rashid Mammadli**
 
-## Learn More
+- Github: [8Bts](https://github.com/8Bts)
+- Twitter: [@Rasheed49705929](https://twitter.com/Rasheed49705929)
+- Linkedin: [Rashid Mammadli](https://www.linkedin.com/in/rashidmammadli/)
+- Email: mcmizze@yahoo.com
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🤝 Contributing
 
-### Code Splitting
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Feel free to check the <a href="https://github.com/8Bts/pc-games-catalogue/issues" target="_blank">issues page</a>.
 
-### Analyzing the Bundle Size
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Give a ⭐️ if you like this project!
 
-### Making a Progressive Web App
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Microverse - Web Development School](https://www.microverse.org/)
