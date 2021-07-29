@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import item from '../styles/item.module.css';
 
 const GameItem = ({
@@ -12,13 +13,13 @@ const GameItem = ({
     <li className={`list-group-item ${item.li}`}>
       <div className="row">
         <div className={`${item.left} col-md-4`}>
-          <a href={`/game/${id}`} className={item.anchor}>
+          <Link to={`/game/${id}`}>
             <span className={item.img} style={background} />
-          </a>
+          </Link>
         </div>
         <div className={`${item.right} col-md-8`}>
           <h3>
-            <a href={`/game/${id}`} className={item.anchor}>{name}</a>
+            <Link to={`/game/${id}`} className={item.anchor}>{name}</Link>
           </h3>
           <div className="mb-3">
             {genres.map((genre) => (<span className="badge bg-info me-2" key={genre.id}>{genre.name}</span>))}

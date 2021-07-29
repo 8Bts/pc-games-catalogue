@@ -8,7 +8,9 @@ import gamelist from '../styles/gamelist.module.css';
 const GameList = ({
   gameItems, fetchGamesData,
 }) => {
-  useEffect(() => fetchGamesData(), []);
+  useEffect(() => {
+    if (gameItems.length === 0) fetchGamesData();
+  }, []);
 
   return (
     <ul className={`list-group ${gamelist.ul}`}>

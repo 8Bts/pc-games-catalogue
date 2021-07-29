@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { fetchSingleGameData } from '../redux/actions';
 import singlegame from '../styles/singlegame.module.css';
+import backIcon from '../assets/back.png';
 
 const propTypes = {
   game: PropTypes.shape({
@@ -49,12 +51,19 @@ const GamePage = ({
     backgroundImage: `url(${game.img})`,
   };
   const requirements = game.platforms.length > 0 ? game.platforms.find((obj) => obj.platform.name === 'PC').requirements : { minumum: null, recommended: null };
+
   return (
     <div>
       <div className={singlegame.page}>
         <header>
           <div className="header">
-            <h1 className={`${singlegame.h1} text-center p-2`}>{game.name}</h1>
+            <h1 className={`${singlegame.h1} text-center p-2`}>
+              <Link to="/" className={singlegame.back}>
+                <span className="d-none d-md-inline-block">Back</span>
+                <img className={singlegame.backicon} src={backIcon} alt="Back" />
+              </Link>
+              {game.name}
+            </h1>
           </div>
         </header>
         <section>
