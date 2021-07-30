@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  background: rgb(6, 126, 79);
+  background: linear-gradient(180deg, rgba(6, 126, 79, 1) 0%, rgba(6, 120, 106, 1) 21%, rgba(108, 150, 163, 1) 100%);
+  min-height: 100vh;
+  padding: 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  .app {
+    padding: 2% 4% 4% 4%;
+  }
+}
