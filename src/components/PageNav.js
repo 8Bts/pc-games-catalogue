@@ -18,15 +18,15 @@ const PageNav = ({
   }, [page]);
 
   const switchBtns = (value) => {
-    if (value === pageBtns[0] + 9) {
-      const nextBtns = pageBtns.map((p, idx) => (value + idx > totalPages ? -1 : value + idx));
+    if (value === 'next') {
+      const nextBtns = pageBtns.map((p) => (p + 9 > totalPages ? -1 : p + 9));
       const tail = nextBtns.indexOf(-1);
       if (tail !== -1) {
         setPageBtns(nextBtns.slice(0, tail));
       } else {
         setPageBtns(nextBtns);
       }
-    } else if (value === pageBtns[0] && value > 10) {
+    } else if (value === 'prev') {
       const nextBtns = pageBtns.map((p) => p - 9);
       setPageBtns(nextBtns);
     }
@@ -34,20 +34,28 @@ const PageNav = ({
 
   const handlePageBtnClick = (event) => {
     const value = Number(event.target.innerHTML);
-    switchBtns(value);
+    if (value === pageBtns[9]) {
+      switchBtns('next');
+    } else if (value === pageBtns[0]) {
+      switchBtns('prev');
+    }
     setPage(value);
     fetchGamesByGenre(genre, value);
   };
   const handleNextClick = () => {
     fetchGamesByGenre(genre, page + 1);
-    switchBtns(page + 1);
+    if (page === pageBtns[9] || page === pageBtns[8]) {
+      switchBtns('next');
+    }
     setPage(page + 1);
   };
 
   const handlePrevClick = () => {
     if (page > 1) {
       fetchGamesByGenre(genre, page - 1);
-      switchBtns(page - 1);
+      if (page === pageBtns[0] || page === pageBtns[1]) {
+        switchBtns('prev');
+      }
       setPage(page - 1);
     }
   };
