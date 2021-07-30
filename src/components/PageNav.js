@@ -19,13 +19,8 @@ const PageNav = ({
 
   const switchBtns = (value) => {
     if (value === 'next' && page <= totalPages) {
-      const nextBtns = pageBtns.map((p) => (p + 9 > totalPages ? -1 : p + 9));
-      const tail = nextBtns.indexOf(-1);
-      if (tail !== -1) {
-        setPageBtns(nextBtns.slice(0, tail));
-      } else {
-        setPageBtns(nextBtns);
-      }
+      const nextBtns = pageBtns.map((p) => (p + 9));
+      setPageBtns(nextBtns);
     } else if (value === 'prev' && page > 9) {
       const nextBtns = pageBtns.map((p) => p - 9);
       setPageBtns(nextBtns);
@@ -74,7 +69,9 @@ const PageNav = ({
                 key={Math.random() * 100}
                 onClick={handlePageBtnClick}
                 type="button"
-                className={`page-btn d-none d-md-inline-block btn mx-1 ${p === page ? 'btn-dark' : 'btn-success'}`}
+                className={`page-btn d-none btn mx-1
+                  ${p === page ? 'btn-dark' : 'btn-success'}
+                  ${p > totalPages ? '' : 'd-md-inline-block'}`}
               >
                 {p}
               </button>
