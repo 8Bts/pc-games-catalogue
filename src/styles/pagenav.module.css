@@ -5,3 +5,9 @@
 .counter {
   background-color: aquamarine;
 }
+
+.buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}

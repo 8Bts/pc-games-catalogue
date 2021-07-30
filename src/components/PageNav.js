@@ -18,7 +18,7 @@ const PageNav = ({
   }, [page]);
 
   const switchBtns = (value) => {
-    if (value === 'next') {
+    if (value === 'next' && page <= totalPages) {
       const nextBtns = pageBtns.map((p) => (p + 9 > totalPages ? -1 : p + 9));
       const tail = nextBtns.indexOf(-1);
       if (tail !== -1) {
@@ -26,7 +26,7 @@ const PageNav = ({
       } else {
         setPageBtns(nextBtns);
       }
-    } else if (value === 'prev') {
+    } else if (value === 'prev' && page > 9) {
       const nextBtns = pageBtns.map((p) => p - 9);
       setPageBtns(nextBtns);
     }
@@ -67,7 +67,7 @@ const PageNav = ({
         <div>
           <span>{` Page: ${page} of ${totalPages}`}</span>
         </div>
-        <div>
+        <div className={pagenav.buttons}>
           {
             pageBtns.map((p) => (
               <button
