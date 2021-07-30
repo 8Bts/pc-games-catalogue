@@ -12,131 +12,184 @@ exports[`Renders correctly 1`] = `
     }
   }
 >
-  <Connect(GamePage)
-    match={
-      Object {
-        "params": Object {
-          "gameId": "3498",
-        },
-      }
-    }
-  >
-    <GamePage
-      fetchSingleGameData={[Function]}
-      game={
+  <BrowserRouter>
+    <Router
+      history={
         Object {
-          "description": "",
-          "genres": Array [],
-          "img": "",
-          "name": "",
-          "platforms": Array [],
-          "rating": -1,
-          "released": "",
-          "website": "",
-        }
-      }
-      match={
-        Object {
-          "params": Object {
-            "gameId": "3498",
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
           },
+          "push": [Function],
+          "replace": [Function],
         }
       }
     >
-      <div>
-        <div
-          className="page"
+      <Connect(GamePage)
+        match={
+          Object {
+            "params": Object {
+              "gameId": "3498",
+            },
+          }
+        }
+      >
+        <GamePage
+          fetchSingleGameData={[Function]}
+          game={
+            Object {
+              "description": "",
+              "genres": Array [],
+              "img": "",
+              "name": "",
+              "platforms": Array [],
+              "rating": -1,
+              "released": "",
+              "website": "",
+            }
+          }
+          match={
+            Object {
+              "params": Object {
+                "gameId": "3498",
+              },
+            }
+          }
         >
-          <header>
+          <div>
             <div
-              className="header"
+              className="page"
             >
-              <h1
-                className="h1 text-center p-2"
-              />
-            </div>
-          </header>
-          <section>
-            <div
-              className="row gx-0 my-4"
-            >
-              <div
-                className="img col-md-5"
-                style={
-                  Object {
-                    "backgroundImage": "url()",
-                  }
-                }
-              />
-              <div
-                className="right col-md-7 d-flex flex-column"
-              >
-                <span
-                  className="mb-1 d-flex"
+              <header>
+                <div
+                  className="header"
                 >
-                  <span
-                    className="fw-bold"
+                  <h1
+                    className="h1 text-center p-2"
                   >
-                    Genres:
-                  </span>
-                  <span
-                    className="d-flex flex-wrap align-items-center"
+                    <Link
+                      className="back"
+                      to="/"
+                    >
+                      <LinkAnchor
+                        className="back"
+                        href="/"
+                        navigate={[Function]}
+                      >
+                        <a
+                          className="back"
+                          href="/"
+                          onClick={[Function]}
+                        >
+                          <span
+                            className="d-none d-md-inline-block"
+                          >
+                            Back
+                          </span>
+                          <img
+                            alt="Back"
+                            className="backicon"
+                            src="back.png"
+                          />
+                        </a>
+                      </LinkAnchor>
+                    </Link>
+                  </h1>
+                </div>
+              </header>
+              <section>
+                <div
+                  className="row gx-0 my-4"
+                >
+                  <div
+                    className="img col-md-5"
+                    style={
+                      Object {
+                        "backgroundImage": "url()",
+                      }
+                    }
                   />
-                </span>
-                <span
-                  className="mb-1 fw-bold"
-                >
-                  Rating:
-                  <span
-                    className="badge bg-warning mx-2"
+                  <div
+                    className="right col-md-7 d-flex flex-column"
                   >
-                    -1
-                     / 5
-                  </span>
-                </span>
-                <span
-                  className="my-3 fw-bold"
-                >
-                  Released:
-                  <i
-                    className="ps-2 fw-normal"
+                    <span
+                      className="mb-1 d-flex"
+                    >
+                      <span
+                        className="fw-bold"
+                      >
+                        Genres:
+                      </span>
+                      <span
+                        className="d-flex flex-wrap align-items-center"
+                      />
+                    </span>
+                    <span
+                      className="mb-1 fw-bold"
+                    >
+                      Rating:
+                      <span
+                        className="badge bg-warning mx-2"
+                      >
+                        -1
+                         / 5
+                      </span>
+                    </span>
+                    <span
+                      className="my-3 fw-bold"
+                    >
+                      Released:
+                      <i
+                        className="ps-2 fw-normal"
+                      >
+                         
+                      </i>
+                    </span>
+                    <address
+                      className="fw-bold"
+                    >
+                      Website:
+                      <a
+                        className="link-success ps-2"
+                        href=""
+                        rel="noreferrer"
+                        target="_blank"
+                      />
+                    </address>
+                    <span
+                      className="verdana"
+                    />
+                    <span
+                      className="verdana"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <h2
+                    className="h2 text-center mb-3 p-1"
                   >
-                     
-                  </i>
-                </span>
-                <address
-                  className="fw-bold"
-                >
-                  Website:
-                  <a
-                    className="link-success ps-2"
-                    href=""
-                    rel="noreferrer"
-                    target="_blank"
+                    Description
+                  </h2>
+                  <div
+                    className="verdana"
                   />
-                </address>
-                <span
-                  className="verdana"
-                />
-                <span
-                  className="verdana"
-                />
-              </div>
+                </div>
+              </section>
             </div>
-            <div>
-              <h2
-                className="h2 text-center mb-3 p-1"
-              >
-                Description
-              </h2>
-              <div
-                className="verdana"
-              />
-            </div>
-          </section>
-        </div>
-      </div>
-    </GamePage>
-  </Connect(GamePage)>
+          </div>
+        </GamePage>
+      </Connect(GamePage)>
+    </Router>
+  </BrowserRouter>
 </Provider>
 `;

@@ -2,6 +2,7 @@ import toJson from 'enzyme-to-json';
 import { mount, configure } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import GamePage from '../../containers/GamePage';
 import store from '../../redux/store';
 
@@ -15,7 +16,9 @@ it('Renders correctly', () => {
 
   const wrapper = mount(
     <Provider store={store}>
-      <GamePage match={match} />
+      <BrowserRouter>
+        <GamePage match={match} />
+      </BrowserRouter>
     </Provider>,
   );
   expect(toJson(wrapper)).toMatchSnapshot();

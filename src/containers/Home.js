@@ -22,6 +22,7 @@ const Home = ({
         fetchGamesByGenre={fetchGamesByGenre}
         setGenre={setGenre}
         setPage={setPage}
+        genre={genre}
       />
       <div className={`d-none d-md-block ${navbar.navbar}`}>
         <PageNav

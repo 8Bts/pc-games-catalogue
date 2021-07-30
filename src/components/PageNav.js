@@ -74,14 +74,14 @@ const PageNav = ({
                 key={Math.random() * 100}
                 onClick={handlePageBtnClick}
                 type="button"
-                className={`d-none d-md-inline-block btn mx-1 ${p === page ? 'btn-dark' : 'btn-success'}`}
+                className={`page-btn d-none d-md-inline-block btn mx-1 ${p === page ? 'btn-dark' : 'btn-success'}`}
               >
                 {p}
               </button>
             ))
           }
-          <button onClick={handlePrevClick} type="button" className="btn bg-success m-3" disabled={!(page > 1)}>Previous</button>
-          <button onClick={handleNextClick} type="button" className="btn bg-success">Next</button>
+          <button onClick={handlePrevClick} type="button" className="prev-btn btn bg-success m-3" disabled={!(page > 1)}>Previous</button>
+          <button onClick={handleNextClick} type="button" className="next-btn btn bg-success" disabled={(page === totalPages)}>Next</button>
         </div>
       </div>
     </div>
