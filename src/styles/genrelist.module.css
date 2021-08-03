@@ -1,0 +1,9 @@
+.sidebar {
+  width: 21%;
+  margin-right: 2em;
+}
+
+.li {
+  background-color: #f0feff;
+  padding: 3px;
+}

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`async actions creates FETCH_GAMES_BY_GENRE_FULFILLED when fetching games has been done 1`] = `
+Array [
+  Object {
+    "type": "FETCH_GAMES_BY_GENRE_PENDING",
+  },
+  Object {
+    "payload": Array [],
+    "type": "FETCH_GAMES_BY_GENRE_FULFILLED",
+  },
+]
+`;
+
+exports[`async actions creates FETCH_GAMES_DATA_FULFILLED when fetching games has been done 1`] = `
+Array [
+  Object {
+    "type": "FETCH_GAMES_DATA_PENDING",
+  },
+  Object {
+    "payload": Array [],
+    "type": "FETCH_GAMES_DATA_FULFILLED",
+  },
+]
+`;
+
+exports[`async actions creates FETCH_SINGLE_GAME_DATA_FULFILLED when fetching games has been done 1`] = `
+Array [
+  Object {
+    "type": "FETCH_SINGLE_GAME_DATA_PENDING",
+  },
+  Object {
+    "payload": Array [],
+    "type": "FETCH_SINGLE_GAME_DATA_FULFILLED",
+  },
+]
+`;

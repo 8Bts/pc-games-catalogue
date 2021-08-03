@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <GameItem
+        genres={
+          Array [
+            Object {
+              "id": 1,
+              "name": "action",
+            },
+            Object {
+              "id": 2,
+              "name": "indie",
+            },
+          ]
+        }
+        id={1}
+        img=""
+        name="Grand Theft Auto V"
+        rating={4}
+        relDate="01/01/11"
+      >
+        <li
+          className="list-group-item li"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="left col-md-4"
+            >
+              <Link
+                to="/game/1"
+              >
+                <LinkAnchor
+                  href="/game/1"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/game/1"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="img"
+                      style={
+                        Object {
+                          "backgroundImage": "url()",
+                        }
+                      }
+                    />
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </div>
+            <div
+              className="right col-md-8"
+            >
+              <h3>
+                <Link
+                  className="anchor"
+                  to="/game/1"
+                >
+                  <LinkAnchor
+                    className="anchor"
+                    href="/game/1"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="anchor"
+                      href="/game/1"
+                      onClick={[Function]}
+                    >
+                      Grand Theft Auto V
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </h3>
+              <div
+                className="mb-3"
+              >
+                <span
+                  className="badge bg-info me-2"
+                  key="1"
+                >
+                  action
+                </span>
+                <span
+                  className="badge bg-info me-2"
+                  key="2"
+                >
+                  indie
+                </span>
+                <span
+                  className="badge bg-warning"
+                >
+                  4
+                   / 5
+                </span>
+              </div>
+              <span>
+                Released:
+                  01/01/11
+              </span>
+            </div>
+          </div>
+        </li>
+      </GameItem>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
